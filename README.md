@@ -3,8 +3,7 @@
 ## [Matrix Creator](https://matrix-io.github.io/matrix-documentation/matrix-creator/overview/)
 The MATRIX Creator is a hatter for the raspberry pi featureing 11 different types of sensors including an array of 8 microphones. 
 
-//
-//TODO add image
+![ODIN Web Demo Gif](thumbnails/matrixsensor.gif)
 
 ## [Odin Web](https://github.com/introlab/odas/wiki)
 ODAS (Open embeddeD Audition System) performs sound source localization, tracking, separation and post-filtering.
