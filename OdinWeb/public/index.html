@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+    <script>
+        jQuery.fn.rotate = function(degrees) {
+        $(this).css({'transform' : 'rotate('+ degrees +'deg)'});
+        return $(this);
+    };
+        function log(x){
+            data = JSON.parse(x)['src']
+            // console.log(data)
+            for (let i = 0; i < data.length; i++){
+                obj = data[i]
+                
+                if (obj.tag === 'dynamic' && obj.activity > 0.9){
+                    console.log(obj)
+                    y = Math.abs(obj.y)
+                    x = Math.abs(obj.x)
+                    if (obj.y >= 0){
+                        if (obj.x >= 0){
+                            rad = Math.atan(y/x)
+                        }
+                        if (obj.x <= 0){
+                            rad = Math.PI/2 + Math.atan(x/y)
+                        }
+                    }
+                    if (obj.y < 0){
+                        if (obj.x < 0){
+                            rad = Math.PI + Math.atan(y/x) 
+                        }
+                        if (obj.x > 0){
+                            rad = 3*Math.PI/2 + Math.atan(x/y)
+                        }
+
+                    }
+                    // rad = Math.atan(obj.y/obj.x) * (obj.x > 0 ? 1 : -1);
+                    deg = rad * (180/Math.PI)
+                    deg = Math.floor(deg)
+                    $('#arrow').rotate(deg)
+                    break;
+                }else if(obj.tag.length > 0){
+                    console.log(obj)
+                }
+                
+            }
+            // $('#textbox').append('<p>' + x + '</p>')
+            // console.log(JSON.parse(x))
+        }
+        function getData(){
+            $.ajax({
+                url: 'http://localhost:3111',
+                method: 'GET',
+                success: log
+            })
+        }
+        setInterval(getData, 50)
+
+    </script>
+    <meta charset="UTF-8">
+    <title>Should be getting Data!</title>
+  </head>
+  <body>
+    <img id='arrow' height=200 src='https://cdn.pixabay.com/photo/2016/09/05/10/50/app-1646212_960_720.png'></img>
+    <p id='textbox'></p>
+  </body>
+</html>
