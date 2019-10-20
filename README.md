@@ -9,9 +9,10 @@ The MATRIX Creator is a hatter for the raspberry pi featureing 11 different type
 ## [Odin Web](https://github.com/introlab/odas/wiki)
 ODAS (Open embeddeD Audition System) performs sound source localization, tracking, separation and post-filtering.
 
+To run ODIN Web, first do `cd OdinWeb`, then run `npm install` to install required dependencies
+When you are ready and the device is ready to send over data, run `npm start` and the Electron application should build.
 //TODO add code / sound coordinate examples
-//TODO add image
-![ODIN Web Demo Gif](https://gyazo.com/eeb982d1900fb747280c73d2aa77762f.gif)
+![ODIN Web Demo Gif](https://i.gyazo.com/eeb982d1900fb747280c73d2aa77762f.gif)
 
 ## [IBM MAX Audio Classifier](https://developer.ibm.com/exchanges/models/all/max-audio-classifier/)
 IBM MAX Audio Classifier is used to classify sound bites. The model supports 527 different classes, and was trained on the Google AudioSet.
