@@ -51,4 +51,5 @@ Using microphone wavelet data from the MATRIX Creator, and ARCore, The Augmented
 
 ## Why Odin?
 Odin is the Norse God in Greek Mythology with the "All Seeing Eye". We drew inspiration from Odin by giving our users an 'all seeing eye' by enhancing their vision with audio information through AR technology.
+
 ![Odin, the man Himself](thumbnails/odin.png)
