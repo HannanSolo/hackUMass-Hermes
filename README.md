@@ -9,6 +9,6 @@ ODAS (Open embeddeD Audition System) performs sound source localization, trackin
 ## [IBM MAX Audio Classifier](https://developer.ibm.com/exchanges/models/all/max-audio-classifier/)
 IBM MAX Audio Classifier is used to classify sound bites. The model supports 527 different classes, and was trained on the Google AudioSet.
 
-## Augmented Relaity Directional Display
-I don't know what we used for this
+## Augmented Reality Directional Display
+Using microphone wavelet data from the MATRIX Creator, and ARCore, The Augmented Reality Directional Display is able to allow users to view exactly which direction their sound is coming from. 
 
