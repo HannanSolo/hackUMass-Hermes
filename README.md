@@ -1,4 +1,4 @@
-# ODIN
+# O.D.I.N (Ocular Detection Instead of Noise)
 
 ## [Matrix Creator](https://matrix-io.github.io/matrix-documentation/matrix-creator/overview/)
 The MATRIX Creator is a hatter for the raspberry pi featureing 11 different types of sensors including an array of 8 microphones. 
@@ -6,7 +6,7 @@ The MATRIX Creator is a hatter for the raspberry pi featureing 11 different type
 //
 //TODO add image
 
-## [ODAS](https://github.com/introlab/odas/wiki)
+## [Odin Web](https://github.com/introlab/odas/wiki)
 ODAS (Open embeddeD Audition System) performs sound source localization, tracking, separation and post-filtering.
 
 //TODO add code / sound coordinate examples
@@ -45,5 +45,5 @@ API respondse:
 ~~~
 
 ## Augmented Relaity Directional Display
-I don't know what we used for this
+Using microphone wavelet data from the MATRIX Creator, and ARCore, The Augmented Reality Directional Display is able to allow users to view exactly which direction their sound is coming from. 
 
