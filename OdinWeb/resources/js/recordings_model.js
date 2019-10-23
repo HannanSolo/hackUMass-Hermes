@@ -2,7 +2,7 @@ const ipcRenderer = require('electron').ipcRenderer;
 const path = require('path');
 const os = require('os');
 const fs = require('fs');
-const info = require('wav-file-info');
+const mm = require('music-metadata');
 const dialog = require('electron').remote.dialog;
 const speechToText = require('./../resources/js/speech-to-text.js');
 
@@ -51,32 +51,31 @@ class Recording {
   }
 
   readInfo(retry) {
+
     // Read duration from wave file
-    info.infoByFilename(this.path, (err, info) => {
-      if(err == null) {
+    mm.parseFile(this.path).then(metadata => {
 
-        this.duration = info.duration
-        this.timestamp = new Date(info.stats.birthtime)
+      const stats = fs.statSync(this.path)
 
-        RecordingsModel.recordings.sort((a,b) => {
-          if(a.timestamp < b.timestamp)
-            return 1
+      this.duration = metadata.format.duration
+      this.timestamp = new Date(stats.birthtime)
 
-          else if(a.timestamp > b.timestamp)
-            return -1
+      RecordingsModel.recordings.sort((a,b) => {
+        if(a.timestamp < b.timestamp)
+          return 1
 
-          else {
-            return 0
-          }
-        })
-      }
+        else if(a.timestamp > b.timestamp)
+          return -1
 
-      else {
-        this.duration = -1
-        console.log(err)
-        if(retry) {
-          setTimeout(() => { this.readInfo(false)}, 3000)
+        else {
+          return 0
         }
+      })
+    }, err => {
+      this.duration = -1
+      console.log(err)
+      if(retry) {
+        setTimeout(() => { this.readInfo(false)}, 3000)
       }
     })
   }
