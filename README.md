@@ -12,7 +12,6 @@ ODAS (Open embeddeD Audition System) performs sound source localization, trackin
 
 To run ODIN Web, first do `cd OdinWeb`, then run `npm install` to install required dependencies
 When you are ready and the device is ready to send over data, run `npm start` and the Electron application should build.
-//TODO add code / sound coordinate examples
 
 ![ODIN Web Demo Gif](thumbnails/odin_web.gif)
 
